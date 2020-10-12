@@ -8,7 +8,6 @@ import mongoose from 'mongoose';
 import routes from './app/routes';
 
 const app = express();
-const mongoUrl = process.env.MONGO_URL || false;
 app.disable('x-powered-by');
 
 app.use(cors());
@@ -16,9 +15,8 @@ app.use(json());
 
 app.use('/', routes);
 
-if (!mongoUrl) console.error('Please, provide one connection string');
 
-mongoose.connect(mongoUrl, {
+mongoose.connect(process.env.MONGO_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
