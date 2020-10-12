@@ -1,5 +1,5 @@
-import Corredor from '../models/corredor.model';
-import Produtos from '../models/produtos.model';
+const Corredor = require('../models/corredor.model');
+const Produtos = require('../models/produtos.model');
 
 async function Create({
 	descricao,
@@ -24,7 +24,7 @@ async function FindById(_id) {
 	return produtos;
 }
 
-export default {
+module.exports = {
 	Create,
 	Find,
 	FindById,

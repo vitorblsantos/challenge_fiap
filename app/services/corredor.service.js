@@ -1,4 +1,4 @@
-import Corredor from '../models/corredor.model';
+const Corredor = require('../models/corredor.model');
 
 async function Create({ identificador, posicaoFinal, posicaoInicial }) {
 	const corredor = new Corredor({
@@ -19,7 +19,7 @@ async function FindByDescription(identificador) {
 	return teste;
 }
 
-export default {
+module.exports = {
 	Create,
 	Find,
 	FindByDescription,

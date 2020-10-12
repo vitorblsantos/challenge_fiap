@@ -1,7 +1,7 @@
-import { Router } from 'express';
-import wrap from 'express-async-handler';
+const { Router } = require('express');
+const wrap = require('express-async-handler');
 
-import Produtos from '../controllers/produtos.controller';
+const Produtos = require('../controllers/produtos.controller.js');
 
 const router = Router();
 
@@ -9,4 +9,4 @@ router.get('/', wrap(Produtos.Find));
 router.get('/:id', wrap(Produtos.FindById));
 router.post('/', wrap(Produtos.Create));
 
-export default router;
+module.exports = router;

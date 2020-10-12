@@ -1,7 +1,7 @@
-import express from 'express';
+const express = require('express');
 
-import Corredor from './corredor.route';
-import Produtos from './produtos.route';
+const Corredor = require('./corredor.route.js');
+const Produtos = require('./produtos.route.js');
 
 const router = express.Router();
 
@@ -12,4 +12,4 @@ router.get('/', function (req, res) {
 router.use('/corredor', Corredor);
 router.use('/produtos', Produtos);
 
-export default router;
+module.exports = router;

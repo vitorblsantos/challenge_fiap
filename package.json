@@ -32,6 +32,6 @@
   ],
   "scripts": {
     "dev": "nodemon ./server.js --env development",
-    "start": "./node_modules/.bin/sucrase-node ./server.js"
+    "start": "node ./server.js"
   }
 }

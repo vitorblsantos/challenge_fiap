@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose';
+const { model, Schema } = require('mongoose');
 
 const Corredor = new Schema({
 	active: {
@@ -22,4 +22,4 @@ const Corredor = new Schema({
 	},
 });
 
-export default model('Corredor', Corredor);
+module.exports = model('Corredor', Corredor);

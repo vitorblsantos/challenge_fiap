@@ -1,20 +1,21 @@
-import 'dotenv/config';
+require('dotenv/config');
 
-import { json } from 'body-parser';
-import cors from 'cors';
-import express from 'express';
-import mongoose from 'mongoose';
+const { json } = require('body-parser');
+const cors = require('cors');
+const express = require('express');
+const mongoose = require('mongoose');
 
-import routes from './app/routes';
+const routes = require('./app/routes/index.js');
 
 const app = express();
+const port = process.env.PORT || 3000;
+
 app.disable('x-powered-by');
 
 app.use(cors());
 app.use(json());
 
 app.use('/', routes);
-
 
 mongoose.connect(process.env.MONGO_URL, {
 	useNewUrlParser: true,
@@ -25,7 +26,7 @@ mongoose.connect(process.env.MONGO_URL, {
 mongoose.connection.on('error', console.error.bind(console, 'Mongoose connection error:'));
 
 mongoose.connection.on('connected', () => {
-	app.listen(process.env.APP_PORT || 3000, function () {
-		console.info(`Server listen on port: ${process.env.APP_PORT}`);
+	app.listen(port, () => {
+		console.log(`App running on port: ${port}`);
 	});
 });
