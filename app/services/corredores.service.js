@@ -1,7 +1,8 @@
-const Corredor = require('../models/corredor.model');
+const Corredor = require('../models/corredores.model');
 
-async function Create({ identificador, posicaoFinal, posicaoInicial }) {
+async function Create({ disponibilidade, identificador, posicaoFinal, posicaoInicial }) {
 	const corredor = new Corredor({
+		disponibilidade,
 		identificador,
 		posicaoFinal,
 		posicaoInicial,

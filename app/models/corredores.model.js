@@ -2,24 +2,21 @@ const { model, Schema } = require('mongoose');
 
 const Corredor = new Schema({
 	active: {
-		type: Boolean,
 		default: true,
+		type: Boolean,
 	},
 	createdAt: {
-		type: Date,
 		default: Date.now,
+		type: Date,
+	},
+	disponibilidade: {
+		type: Number,
 	},
 	identificador: {
-		type: String,
 		required: true,
+		type: String,
 		unique: true,
-	},
-	posicaoFinal: {
-		type: String,
-	},
-	posicaoInicial: {
-		type: String,
 	},
 });
 
-module.exports = model('Corredor', Corredor);
+module.exports = model('Corredores', Corredor);

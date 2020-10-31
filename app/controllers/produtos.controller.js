@@ -8,12 +8,17 @@ async function Find(req, res) {
 	res.send(await Produtos.Find());
 }
 
-async function FindById(req, res) {
-	res.send(await Produtos.FindById(req.params._id));
+async function FindByTag(req, res) {
+	res.send(await Produtos.FindByTag(req.params));
+}
+
+async function Inactive(req, res) {
+	res.send(await Produtos.Inactive(req.params));
 }
 
 module.exports = {
 	Create,
 	Find,
-	FindById,
+	FindByTag,
+	Inactive,
 };

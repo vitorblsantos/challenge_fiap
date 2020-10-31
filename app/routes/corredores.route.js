@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const wrap = require('express-async-handler');
 
-const Corredor = require('../controllers/corredor.controller.js');
+const Corredor = require('../controllers/corredores.controller.js');
 
 const router = Router();
 

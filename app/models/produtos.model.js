@@ -2,28 +2,33 @@ const { model, Schema } = require('mongoose');
 
 const Produtos = new Schema({
 	active: {
-		type: Boolean,
 		default: true,
+		type: Boolean,
 	},
 	createdAt: {
-		type: Date,
 		default: Date.now,
+		type: Date,
 	},
 	corredor: {
-		type: String,
 		required: true,
+		type: String,
 	},
 	descricao: {
-		type: String,
 		required: true,
+		type: String,
+	},
+	identificador: {
+		required: true,
+		type: Number,
 	},
 	tagRfid: {
-		type: String,
 		required: true,
+		type: String,
+		unique: true,
 	},
 	updatedAt: {
-		type: Date,
 		default: Date.now,
+		type: Date,
 	},
 });
 

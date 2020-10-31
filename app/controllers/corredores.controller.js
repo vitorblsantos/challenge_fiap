@@ -1,4 +1,4 @@
-const Corredor = require('../services/corredor.service');
+const Corredor = require('../services/corredores.service');
 
 async function Create(req, res) {
 	res.send(await Corredor.Create(req.body));
